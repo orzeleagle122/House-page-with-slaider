@@ -5,8 +5,12 @@ import {
     Logo,
     MenuBars,
     NavMenu,
-    NavMenuLinks
+    NavMenuLinks,
+    NavBtm
 } from './Navbar.elements';
+import {Button} from '../';
+import {Link} from 'react-router-dom';
+
 
 const Navbar = () => {
     return ( 
@@ -20,7 +24,13 @@ const Navbar = () => {
                     </NavMenuLinks>
                 ))}
             </NavMenu>
-            Navbar
+            <NavBtm>
+                <Button renderas={Link} to='/contact' primary>
+                    {/* renderas /as /compoment */}
+                    Contact Us
+                </Button>
+            </NavBtm>
+
         </Nav>
      );
 }

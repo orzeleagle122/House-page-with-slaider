@@ -1,9 +1,10 @@
 import styled,{css} from 'styled-components';
 import {Link} from 'react-router-dom';
+import {FaBars} from 'react-icons/fa';
 
 
 export const Nav=styled.nav`
-    height: 60px;
+    height: 80px;
     background: #000;
     display: flex;
     justify-content: space-between;
@@ -28,15 +29,34 @@ export const Logo=styled(Link)`
     font-style: italic;
 `;
 
-export const MenuBars=styled.i`
+export const MenuBars=styled(FaBars)`
+    display:none;
 
+    @media screen and (max-width:768px){
+        display:block;
+    }
 `;
 
 export const NavMenu=styled.div`
     display: flex;
     align-items: center;
+    margin-right: -48px;
+
+    @media screen and (max-width:768px){
+        display:none;
+    }
 `;
 
 export const NavMenuLinks=styled(Link)`
     ${NavLink}
+`;
+
+export const NavBtm=styled.div`
+    display: flex;
+    align-items:center;
+    margin: 24px;
+    
+    @media screen and (max-width:768px){
+        display:none;
+    }
 `;
