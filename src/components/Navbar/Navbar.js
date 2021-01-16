@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {menuData} from '../../data/MenuData';
 import {
     Nav,
@@ -13,9 +13,20 @@ import {Link} from 'react-router-dom';
 
 
 const Navbar = ({toggle}) => {
+    const [navbar,setNavbar]=useState(false);
+
+    const handleChangeBackground=()=>{
+        if(window.scrollY>=80){
+            setNavbar(true);
+        }else{
+            setNavbar(false);
+        }
+    }
+    window.addEventListener('scroll',handleChangeBackground);
+
     return ( 
-        <Nav>
-            <Logo to='/'>NAZWA</Logo>
+        <Nav bg={navbar}>
+            <Logo to='/'>HOUSE-LOGO</Logo>
             <MenuBars onClick={toggle}/>
             <NavMenu>
                 {menuData.map((item,index)=>(

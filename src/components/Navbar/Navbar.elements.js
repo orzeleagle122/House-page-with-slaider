@@ -11,6 +11,9 @@ export const Nav=styled.nav`
     z-index: 100;
     position: fixed;
     width: 100%;
+    background: ${({bg})=>(bg?'#cd854f':'transparent')};
+    transition: 0.5s ease-in-out;
+
 `;
 
 const NavLink=css`
