@@ -81,7 +81,7 @@ export const HeroContent=styled.div`
     display:flex;
     flex-direction: column;
     max-width:1600px;
-    width:calc(100%-100px);
+    width: calc(100% - 100px);
     color:#fff;
 
     h1{

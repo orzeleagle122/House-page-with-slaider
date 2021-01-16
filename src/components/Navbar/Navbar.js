@@ -12,11 +12,11 @@ import {Button} from '../';
 import {Link} from 'react-router-dom';
 
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
     return ( 
         <Nav>
             <Logo to='/'>NAZWA</Logo>
-            <MenuBars />
+            <MenuBars onClick={toggle}/>
             <NavMenu>
                 {menuData.map((item,index)=>(
                     <NavMenuLinks to={item.link} key={index}>
