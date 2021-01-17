@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {Navbar,Hero,DropDownMenu,InfoSection} from './components';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {HashRouter as Router} from 'react-router-dom';
 import GlobalStyle from './GlobalStyle';
 import {SliderDataOne} from './data/SliderData';
 import {InfoSectionDataOne,InfoSectionDataTwo} from './data/InfoSectionData';
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     <GlobalStyle/>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navbar toggle={toggle}/>
       <DropDownMenu isOpen={isOpen} toggle={toggle}/>
       <Hero slider={SliderDataOne}/>
